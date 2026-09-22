@@ -59,32 +59,32 @@
     --card-foreground: #F8FAFC;
     --popover: #0F172A;
     --popover-foreground: #F8FAFC;
-    --primary: #10B981;
-    --primary-foreground: #042F2E;
+    --primary: #FB8B24;
+    --primary-foreground: #1A0B02;
     --secondary: #1A2234;
     --secondary-foreground: #F8FAFC;
     --muted: #16202F;
     --muted-foreground: #94A3B8;
-    --accent: #06B6D4;
-    --accent-foreground: #083344;
+    --accent: #FFC233;
+    --accent-foreground: #241400;
     --destructive: #EF4444;
     --border: #1E293B;
     --input: #1E293B;
-    --ring: #10B981;
-    --chart-1: #10B981;
-    --chart-2: #F59E0B;
-    --chart-3: #06B6D4;
-    --chart-4: #38BDF8;
+    --ring: #FB8B24;
+    --chart-1: #FB8B24;
+    --chart-2: #FFC233;
+    --chart-3: #FF6B35;
+    --chart-4: #FFE066;
     --chart-5: #EF4444;
     --radius: 0.75rem;
     --sidebar: #0B0F17;
     --sidebar-foreground: #E2E8F0;
-    --sidebar-primary: #10B981;
-    --sidebar-primary-foreground: #042F2E;
+    --sidebar-primary: #FB8B24;
+    --sidebar-primary-foreground: #1A0B02;
     --sidebar-accent: #16202F;
     --sidebar-accent-foreground: #F8FAFC;
     --sidebar-border: #1E293B;
-    --sidebar-ring: #10B981;
+    --sidebar-ring: #FB8B24;
 }
 
 .dark {
@@ -94,31 +94,31 @@
     --card-foreground: #F8FAFC;
     --popover: #0F172A;
     --popover-foreground: #F8FAFC;
-    --primary: #10B981;
-    --primary-foreground: #042F2E;
+    --primary: #FB8B24;
+    --primary-foreground: #1A0B02;
     --secondary: #1A2234;
     --secondary-foreground: #F8FAFC;
     --muted: #16202F;
     --muted-foreground: #94A3B8;
-    --accent: #06B6D4;
-    --accent-foreground: #083344;
+    --accent: #FFC233;
+    --accent-foreground: #241400;
     --destructive: #EF4444;
     --border: #1E293B;
     --input: #1E293B;
-    --ring: #10B981;
-    --chart-1: #10B981;
-    --chart-2: #F59E0B;
-    --chart-3: #06B6D4;
-    --chart-4: #38BDF8;
+    --ring: #FB8B24;
+    --chart-1: #FB8B24;
+    --chart-2: #FFC233;
+    --chart-3: #FF6B35;
+    --chart-4: #FFE066;
     --chart-5: #EF4444;
     --sidebar: #0B0F17;
     --sidebar-foreground: #E2E8F0;
-    --sidebar-primary: #10B981;
-    --sidebar-primary-foreground: #042F2E;
+    --sidebar-primary: #FB8B24;
+    --sidebar-primary-foreground: #1A0B02;
     --sidebar-accent: #16202F;
     --sidebar-accent-foreground: #F8FAFC;
     --sidebar-border: #1E293B;
-    --sidebar-ring: #10B981;
+    --sidebar-ring: #FB8B24;
 }
 
 @layer base {
@@ -142,25 +142,75 @@
     border: 1px solid rgba(148, 163, 184, 0.14);
     box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
+  /* Jigsaw palette: neon orange (primary), amber (secondary), gold (tertiary).
+     Legacy class names are kept so every existing panel inherits the new look. */
   .glass-emerald {
-    border-color: rgba(16, 185, 129, 0.32);
-    box-shadow: 0 0 34px -14px rgba(16, 185, 129, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    border-color: rgba(251, 139, 36, 0.38);
+    box-shadow: 0 0 38px -12px rgba(251, 139, 36, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06),
       0 18px 50px -24px rgba(0, 0, 0, 0.9);
   }
   .glass-cyan {
-    border-color: rgba(6, 182, 212, 0.32);
-    box-shadow: 0 0 34px -14px rgba(6, 182, 212, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    border-color: rgba(255, 194, 51, 0.36);
+    box-shadow: 0 0 38px -12px rgba(255, 194, 51, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06),
       0 18px 50px -24px rgba(0, 0, 0, 0.9);
   }
   .glass-amber {
-    border-color: rgba(245, 158, 11, 0.34);
-    box-shadow: 0 0 34px -14px rgba(245, 158, 11, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 0 0 38px -12px rgba(255, 107, 53, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06),
       0 18px 50px -24px rgba(0, 0, 0, 0.9);
   }
   /* HUD frame with cut corners + crosshair ticks */
+  /* Quantum Jigsaw panel: a tab on the right edge, a matching notch on the left,
+     so stacked panels read as interlocking puzzle pieces. */
   .hud-frame {
     position: relative;
-    clip-path: polygon(0 18px, 18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px));
+    clip-path: polygon(
+      14px 0,
+      38% 0, 38% 11px, 44% 11px, 44% 0,
+      calc(100% - 14px) 0,
+      100% 14px,
+      100% 40%, calc(100% - 13px) 40%, calc(100% - 13px) 50%, 100% 50%,
+      100% calc(100% - 14px),
+      calc(100% - 14px) 100%,
+      58% 100%, 58% calc(100% - 11px), 52% calc(100% - 11px), 52% 100%,
+      14px 100%,
+      0 calc(100% - 14px),
+      0 58%, 13px 58%, 13px 48%, 0 48%,
+      0 14px
+    );
+  }
+  .hud-ticks::before,
+  .hud-ticks::after { border-color: rgba(251, 139, 36, 0.85) !important; }
+
+  /* jigsaw-shaped CTA button: tab right, notch left */
+  .jigsaw-btn {
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      calc(100% - 10px) 30%, 100% 30%, 100% 70%, calc(100% - 10px) 70%,
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 72%, 9px 72%, 9px 28%, 0 28%
+    );
+    box-shadow: 0 0 26px -6px rgba(251, 139, 36, 0.75);
+  }
+  /* data beam sweeping along a panel edge on hover */
+  .jigsaw-edge { position: relative; overflow: hidden; }
+  .jigsaw-edge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(255, 194, 51, 0.22) 48%, rgba(251, 139, 36, 0.32) 52%, transparent 70%);
+    transform: translateX(-60%);
+    transition: opacity 200ms ease;
+  }
+  .jigsaw-edge:hover::before {
+    opacity: 1;
+    animation: beam-sweep 1.1s ease-in-out;
   }
   .hud-ticks::before,
   .hud-ticks::after {
@@ -184,21 +234,21 @@
     border-radius: inherit;
     background: repeating-linear-gradient(rgba(16, 185, 129, 0.03) 0px, transparent 2px, transparent 4px);
   }
-  .glow-terminal { box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.2); }
+  .glow-terminal { box-shadow: 0 0 24px -3px rgba(251, 139, 36, 0.35); }
   .glow-holo {
-    box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25), inset 0 0 15px -3px rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 28px -5px rgba(255, 194, 51, 0.3), inset 0 0 15px -3px rgba(251, 139, 36, 0.18);
   }
   .secret-stamp {
     transform: rotate(-6deg);
-    border: 2px dashed #F59E0B;
-    color: #F59E0B;
+    border: 2px dashed #FFC233;
+    color: #FFC233;
     text-transform: uppercase;
   }
   .corner-cut {
     clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
   }
-  .text-glow { text-shadow: 0 0 12px rgba(16, 185, 129, 0.45); }
-  .text-glow-amber { text-shadow: 0 0 12px rgba(245, 158, 11, 0.5); }
+  .text-glow { text-shadow: 0 0 14px rgba(251, 139, 36, 0.55), 0 0 30px rgba(255, 107, 53, 0.25); }
+  .text-glow-amber { text-shadow: 0 0 14px rgba(255, 194, 51, 0.6); }
 
   /* ---------- animations ---------- */
   .animate-blink { animation: blink 1.1s steps(2, start) infinite; }
@@ -211,8 +261,13 @@
   .animate-orbit-rev { animation: orbit-rev 34s linear infinite; }
   .animate-pulse-ring { animation: pulse-ring 2.6s ease-out infinite; }
   .animate-sweep { animation: sweep 6s ease-in-out infinite; }
+  .animate-glitch-in { animation: glitch-in 700ms cubic-bezier(.2,.7,.3,1) both; }
   .hover-lift { transition: transform 220ms cubic-bezier(.2,.7,.3,1), box-shadow 220ms ease, border-color 220ms ease; }
-  .hover-lift:hover { transform: translateY(-3px); }
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    border-color: rgba(251, 139, 36, 0.5);
+    box-shadow: 0 0 30px -10px rgba(251, 139, 36, 0.55);
+  }
 }
 
 @keyframes blink { to { visibility: hidden; } }
@@ -256,4 +311,15 @@
 @keyframes sweep {
   0%, 100% { transform: translateX(-12%); opacity: 0.25; }
   50% { transform: translateX(12%); opacity: 0.55; }
+}
+@keyframes beam-sweep {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+@keyframes glitch-in {
+  0% { opacity: 0; transform: translateX(-14px) skewX(12deg); filter: hue-rotate(80deg); clip-path: inset(0 0 60% 0); }
+  25% { opacity: 1; transform: translateX(6px) skewX(-8deg); clip-path: inset(40% 0 0 0); }
+  45% { transform: translateX(-4px) skewX(5deg); clip-path: inset(0 0 20% 0); }
+  70% { transform: translateX(2px) skewX(-2deg); filter: none; clip-path: inset(0 0 0 0); }
+  100% { opacity: 1; transform: none; filter: none; clip-path: inset(0 0 0 0); }
 }

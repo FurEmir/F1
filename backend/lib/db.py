@@ -47,6 +47,10 @@ INDEXES: dict[str, list[IndexModel]] = {
     "mentor_messages": [
         IndexModel([("user_id", ASCENDING), ("created_at", ASCENDING)], name="user_created"),
     ],
+    "arena_rooms": [
+        IndexModel([("pin", ASCENDING)], name="pin"),
+        IndexModel([("teacher_id", ASCENDING), ("status", ASCENDING)], name="teacher_status"),
+    ],
     "settings": [],
 }
 

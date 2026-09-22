@@ -87,3 +87,35 @@ Content in `lib/simulations.ts`: 5 PhET sims embedded LIVE via iframe from phet.
 isotopes-and-atomic-mass, discharge-lamps. Each card carries scientist, experiment, description,
 a Socratic "DEDEKTİF SORUSU" prompt, source/license, duration and a link to its related mission.
 Legacy `HologramPlayer` component and `HologramArchivePage` removed.
+
+## Kuantum Arenası — live class game (AŞAMA 3.5 + 4.1)
+Teacher route `/arena` (host / smartboard), student route `/arena/:pin` (QR landing).
+Teacher entry points: nav "Kuantum Arenası" + prominent "ARENAYI BAŞLAT" card on the panel overview tab.
+
+Flow: teacher creates room (PIN `KD-xxxx` + QR of `/arena/<pin>`) → students scan & join (live list with
+glitch/fade-in animation, player count) → teacher "TURU BAŞLAT" → 5 evidence rounds (~1 class period) →
+per round: students pick which evidence undermines a model + write a justification → teacher
+"KANITI AÇIKLA" (reveal + explanation + all student justifications as learning evidence) →
+"SONRAKİ TUR" → after round 5 "ARENAYI BİTİR" → final scoreboard.
+
+Backend `routers/arena.py` + `lib/arena_content.py` (correct answers server-side only; the client gets
+`correct`/`explanation` only for the host or after reveal). Endpoints: create, current, `{pin}/lobby`,
+`{pin}/join`, `{pin}/demo-join`, `{pin}/state`, `{pin}/start`, `{pin}/answer`, `{pin}/reveal`,
+`{pin}/next`, `{pin}/close`. Room doc in `arena_rooms`: status open|in_round|reveal|finished,
+round_index, players[], answers[].
+Scoring: correct evidence +100, justification ≥40 chars +60 (or +30 if weak reasoning keywords),
+speed bonus up to +40. Rounds: Dalton→Thomson, Thomson→Rutherford, Rutherford→Bohr, Bohr→Chadwick,
+nature-of-science (KİM.9.1.3).
+Privacy: lobby/scoreboard show only detective code + nickname + XP-style score; open-ended
+justifications are visible to the teacher only.
+
+## Extras
+- **Sesli brifing**: `lib/speech.ts` + `components/game/VoiceBriefing.tsx` — Web Speech API (tr-TR),
+  on-device, button in every chapter header (`ChapterShell`).
+- **Dedektif Rozet Kartı**: `components/game/DetectiveBadgeCard.tsx` on `/profil` — inline SVG card
+  (code, nickname, level, XP, missions, badge icons), PNG download + share; contains no personal data.
+- **Theme (AŞAMA 4.1)**: dark quantum background + grid retained; accents repainted to neon orange
+  `#FB8B24` / amber `#FFC233` / gold. `.hud-frame` is a jigsaw silhouette (tab + notch),
+  `.jigsaw-btn` puzzle-shaped CTAs, `.jigsaw-edge` hover data-beam, amber text-glow.
+- **Vite**: `react-qr-code` added to `optimizeDeps.include` — a missing entry caused a mid-session
+  re-optimize + reload ("Failed to load /src/main.tsx"). Every shipped dep must be listed there.

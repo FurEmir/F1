@@ -6,6 +6,7 @@ import EvidenceBoardGrid from "@/components/game/EvidenceBoardGrid";
 import TechTreeView from "@/components/game/TechTreeView";
 import DrNovaChat from "@/components/game/DrNovaChat";
 import { RubricResultCard } from "@/components/game/chapters/MoreChapters";
+import DetectiveBadgeCard from "@/components/game/DetectiveBadgeCard";
 import { apiGet } from "@/lib/api";
 import { BADGES, LEVELS } from "@/lib/missions";
 import { saveNickname } from "@/lib/session";
@@ -126,6 +127,8 @@ export function AchievementsPage({ user }: { user: UserProfile }) {
 export function ProfilePage({ user }: { user: UserProfile }) {
   const [nickname, setNickname] = useState(user.nickname ?? "");
   const [saving, setSaving] = useState(false);
+  const missions = useQuery({ queryKey: ["missions"], queryFn: () => apiGet<MissionStatus[]>("/missions") });
+  const completed = (missions.data ?? []).filter((m) => m.status === "completed").length;
 
   async function save() {
     setSaving(true);
@@ -188,8 +191,12 @@ export function ProfilePage({ user }: { user: UserProfile }) {
         </p>
       </section>
 
+      <div className="mt-4">
+        <DetectiveBadgeCard user={user} missionsCompleted={completed} />
+      </div>
+
       <section className="mt-4 hud-frame glass glass-cyan p-4" data-testid="profile-privacy-center">
-        <p className="font-mono text-xs tracking-widest text-cyan-300">🔐 GİZLİLİK MERKEZİ</p>
+        <p className="font-mono text-xs tracking-widest text-amber-300">🔐 GİZLİLİK MERKEZİ</p>
         <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">
           <li>• Hesabında tutulan temel veriler: dedektif kodu, takma ad, sınıf, XP, rozetler, görev ilerlemesi ve açık uçlu cevapların.</li>
           <li>• T.C. kimlik numarası, adres, telefon, e-posta, doğum tarihi, fotoğraf veya konum bilgisi toplanmaz.</li>
@@ -197,7 +204,7 @@ export function ProfilePage({ user }: { user: UserProfile }) {
           <li>• Mentor konuşmalarını AI Mentor sayfasındaki “Geçmişi sil” ile dilediğin an silebilirsin.</li>
           <li>• Diğer öğrenciler cevaplarını, rubrik puanlarını ve öğretmen geri bildirimlerini göremez.</li>
         </ul>
-        <a href="/gizlilik" className="mt-3 inline-block text-sm text-sky-400 hover:underline" data-testid="profile-privacy-link">
+        <a href="/gizlilik" className="mt-3 inline-block text-sm text-amber-300 hover:underline" data-testid="profile-privacy-link">
           Ayrıntılı gizlilik metnini oku →
         </a>
       </section>

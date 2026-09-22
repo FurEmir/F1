@@ -62,7 +62,7 @@ async def get_status_checks():
 
 
 # Feature routers — every app route hangs off api_router under /api
-from routers import assessment, auth, evidence, leaderboard, mentor, missions, teacher  # noqa: E402
+from routers import arena, assessment, auth, evidence, leaderboard, mentor, missions, teacher  # noqa: E402
 
 api_router.include_router(auth.router, prefix="/auth")
 api_router.include_router(missions.router, prefix="/missions")
@@ -70,6 +70,7 @@ api_router.include_router(evidence.router, prefix="/evidence-board")
 api_router.include_router(assessment.router, prefix="/assessment")
 api_router.include_router(mentor.router, prefix="/mentor")
 api_router.include_router(teacher.router, prefix="/teacher")
+api_router.include_router(arena.router, prefix="/arena")
 api_router.include_router(leaderboard.router)
 
 # Include the router in the main app

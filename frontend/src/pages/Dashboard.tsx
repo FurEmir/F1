@@ -69,7 +69,7 @@ export default function Dashboard({ user }: { user: UserProfile }) {
             </Link>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full border border-cyan-500/20 animate-float-y" aria-hidden>
+        <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full border border-amber-500/20 animate-float-y" aria-hidden>
           <div className="m-6 h-36 w-36 rounded-full border border-primary/25" />
         </div>
       </section>
@@ -83,13 +83,13 @@ export default function Dashboard({ user }: { user: UserProfile }) {
       </section>
 
       {/* level progress */}
-      <section className="hud-frame glass p-4 hover-lift" data-testid="dashboard-level-progress">
+      <section className="hud-frame jigsaw-edge glass p-4 hover-lift" data-testid="dashboard-level-progress">
         <div className="flex items-center justify-between">
           <p className="font-mono text-xs tracking-widest text-muted-foreground">BİLİMSEL İLERLEME</p>
           <p className="font-mono text-xs text-primary">{Math.round(levelPct)}%</p>
         </div>
         <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-secondary">
-          <div className="h-full rounded-full bg-gradient-to-r from-primary to-cyan-400 transition-[width] duration-700" style={{ width: `${Math.min(100, levelPct)}%` }} />
+          <div className="h-full rounded-full bg-gradient-to-r from-primary to-amber-400 transition-[width] duration-700" style={{ width: `${Math.min(100, levelPct)}%` }} />
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
           {currentLevel.title}
@@ -99,7 +99,7 @@ export default function Dashboard({ user }: { user: UserProfile }) {
 
       <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
         {/* mission list */}
-        <section className="hud-frame glass p-4 hover-lift" data-testid="dashboard-missions">
+        <section className="hud-frame jigsaw-edge glass p-4 hover-lift" data-testid="dashboard-missions">
           <p className="font-mono text-xs tracking-widest text-amber-400">GÖREV DOSYALARI</p>
           <div className="mt-3 space-y-2">
             {list.map((m) => (
@@ -139,7 +139,7 @@ export default function Dashboard({ user }: { user: UserProfile }) {
         <aside className="space-y-4">
           {/* learning outcome */}
           <section className="hud-frame glass glass-cyan p-4" data-testid="dashboard-outcome">
-            <p className="font-mono text-xs tracking-widest text-cyan-300">ÖĞRENME ÇIKTISI</p>
+            <p className="font-mono text-xs tracking-widest text-amber-300">ÖĞRENME ÇIKTISI</p>
             <p className="mt-2 font-mono text-sm text-primary">KİM.9.1.3</p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               Atom teorilerindeki varsayımları kullanarak bilimsel bilginin değişebilirliğine ilişkin
@@ -154,7 +154,7 @@ export default function Dashboard({ user }: { user: UserProfile }) {
           </section>
 
           {/* badges */}
-          <section className="hud-frame glass p-4 hover-lift" data-testid="dashboard-badges">
+          <section className="hud-frame jigsaw-edge glass p-4 hover-lift" data-testid="dashboard-badges">
             <p className="font-mono text-xs tracking-widest text-amber-400">ROZETLER</p>
             <div className="mt-3 space-y-2">
               {BADGES.map((b) => {
@@ -173,7 +173,7 @@ export default function Dashboard({ user }: { user: UserProfile }) {
           </section>
 
           {/* leaderboard (privacy-safe) */}
-          <section className="hud-frame glass p-4 hover-lift" data-testid="dashboard-leaderboard">
+          <section className="hud-frame jigsaw-edge glass p-4 hover-lift" data-testid="dashboard-leaderboard">
             <p className="font-mono text-xs tracking-widest text-muted-foreground">SINIF İÇİ SIRALAMA</p>
             {leaderboard.data?.enabled === false && (
               <p className="mt-2 text-xs text-muted-foreground" data-testid="leaderboard-disabled">
@@ -221,7 +221,7 @@ function StatCard({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="hud-frame glass p-4 hover-lift" data-testid={testid}>
+    <div className="hud-frame jigsaw-edge glass p-4 hover-lift" data-testid={testid}>
       <p className="flex items-center gap-1.5 font-mono text-[10px] tracking-widest text-muted-foreground">
         <span className="text-primary">{icon}</span>
         {label}

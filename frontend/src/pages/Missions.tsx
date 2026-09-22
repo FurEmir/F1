@@ -75,7 +75,7 @@ export default function Missions() {
               to={m.status === "locked" ? "#" : `/gorevler/${m.id}`}
               onClick={(e) => m.status === "locked" && e.preventDefault()}
               className={cn(
-                "hud-frame glass rounded-md border p-4 transition-all duration-200 hover-lift",
+                "hud-frame jigsaw-edge glass rounded-md border p-4 transition-all duration-200 hover-lift",
                 m.status === "completed" && "border-primary/40 bg-primary/5",
                 m.status === "available" && "border-amber-500/40 bg-card hover:border-amber-400",
                 m.status === "locked" && "border-border bg-card opacity-60",
@@ -92,7 +92,7 @@ export default function Missions() {
                 {m.title}
                 {m.status === "locked" && <Lock size={13} className="text-muted-foreground" aria-hidden />}
               </p>
-              {m.scientist && <p className="text-xs text-cyan-300">{m.scientist} · {m.year}</p>}
+              {m.scientist && <p className="text-xs text-amber-300">{m.scientist} · {m.year}</p>}
               <p className="mt-2 font-mono text-[11px] text-muted-foreground">{m.xp_earned}/{m.xp_total} XP</p>
             </Link>
           ))}
@@ -128,7 +128,7 @@ export default function Missions() {
 
   return (
     <div>
-      <Link to="/gorevler" className="mb-4 inline-flex items-center gap-1 text-sm text-sky-400 hover:underline" data-testid="mission-back-link">
+      <Link to="/gorevler" className="mb-4 inline-flex items-center gap-1 text-sm text-amber-300 hover:underline" data-testid="mission-back-link">
         <ArrowLeft size={14} aria-hidden /> Görev listesi
       </Link>
 

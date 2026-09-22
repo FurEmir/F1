@@ -90,8 +90,8 @@ export default function RutherfordSim({
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
       <div className="hud-frame hud-ticks glass glass-cyan p-4 scanlines" data-testid="rutherford-chamber">
-        <p className="font-mono text-xs tracking-widest text-cyan-300">SAÇILMA ODASI // ALTIN LEVHA DENEYİ</p>
-        <div className="relative mt-4 h-56 overflow-hidden rounded-sm border border-cyan-500/20 bg-black/60">
+        <p className="font-mono text-xs tracking-widest text-amber-300">SAÇILMA ODASI // ALTIN LEVHA DENEYİ</p>
+        <div className="relative mt-4 h-56 overflow-hidden rounded-sm border border-amber-500/20 bg-black/60">
           {/* alpha source */}
           <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-sm border border-amber-500/60 px-2 py-1 font-mono text-[10px] text-amber-400">
             α KAYNAK

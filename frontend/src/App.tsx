@@ -8,6 +8,8 @@ import Dashboard from "@/pages/Dashboard";
 import Missions from "@/pages/Missions";
 import TeacherPanel from "@/pages/TeacherPanel";
 import Simulations from "@/pages/Simulations";
+import ArenaLobby from "@/pages/ArenaLobby";
+import ArenaJoin from "@/pages/ArenaJoin";
 import {
   AchievementsPage,
   EvidenceBoardPage,
@@ -127,6 +129,31 @@ export default function App() {
               {(u) => (
                 <AppShell user={u}>
                   <ProfilePage user={u} />
+                </AppShell>
+              )}
+            </RequireRole>
+          }
+        />
+
+        <Route
+          path="/arena/:pin"
+          element={
+            <RequireRole roles={["student", "teacher", "admin"]}>
+              {(u) => (
+                <AppShell user={u}>
+                  <ArenaJoin user={u} />
+                </AppShell>
+              )}
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/arena"
+          element={
+            <RequireRole roles={["teacher", "admin"]}>
+              {(u) => (
+                <AppShell user={u}>
+                  <ArenaLobby user={u} />
                 </AppShell>
               )}
             </RequireRole>

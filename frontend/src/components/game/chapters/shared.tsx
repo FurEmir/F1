@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import NPCDialogue from "@/components/game/NPCDialogue";
+import VoiceBriefing from "@/components/game/VoiceBriefing";
 import { apiPost } from "@/lib/api";
 import type { MissionContent } from "@/lib/missions";
 import type { MissionCompleteResult } from "@/types";
@@ -127,7 +128,7 @@ export function ChapterShell({ content, tasksDone = [], children }: { content: M
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p className="font-mono text-xs tracking-widest text-amber-400">GÖREV {content.code}</p>
           {(content.scientist || content.year) && (
-            <p className="font-mono text-xs text-cyan-300">
+            <p className="font-mono text-xs text-amber-300">
               {content.scientist}
               {content.year ? ` · ${content.year}` : ""}
             </p>
@@ -135,6 +136,12 @@ export function ChapterShell({ content, tasksDone = [], children }: { content: M
         </div>
         <h1 className="mt-2 font-heading text-3xl text-primary text-glow">{content.title}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{content.subtitle}</p>
+        <div className="mt-3">
+          <VoiceBriefing
+            text={`Görev ${content.code}. ${content.title}. ${content.subtitle}. ${content.story.join(" ")} Görev hedefleri: ${content.objectives.join(". ")}.`}
+            label="Sesli brifingi dinle"
+          />
+        </div>
         <div className="mt-4 space-y-2">
           {content.story.map((p, i) => (
             <p key={i} className="text-sm leading-relaxed text-foreground/90">
@@ -143,7 +150,7 @@ export function ChapterShell({ content, tasksDone = [], children }: { content: M
           ))}
         </div>
         <div className="mt-4 rounded-sm border border-border bg-[#060A10] p-3">
-          <p className="font-mono text-[10px] tracking-widest text-cyan-300">GÖREV HEDEFLERİ</p>
+          <p className="font-mono text-[10px] tracking-widest text-amber-300">GÖREV HEDEFLERİ</p>
           <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs text-muted-foreground">
             {content.objectives.map((o) => (
               <li key={o}>{o}</li>

@@ -73,7 +73,7 @@ export default function DrNovaChat() {
 
   return (
     <div className="flex h-[calc(100svh-220px)] min-h-[480px] flex-col hud-frame hud-ticks glass glass-cyan" data-testid="mentor-chat">
-      <div className="flex items-center justify-between border-b border-cyan-500/20 px-4 py-3">
+      <div className="flex items-center justify-between border-b border-amber-500/20 px-4 py-3">
         <div>
           <p className="font-heading text-base text-primary text-glow" data-testid="mentor-title">Dr. Nova — Bilimsel Sorgulama Mentoru</p>
           <p className="font-mono text-[11px] text-muted-foreground">
@@ -95,7 +95,7 @@ export default function DrNovaChat() {
       <div className="flex-1 space-y-3 overflow-y-auto p-4" data-testid="mentor-messages" aria-live="polite">
         {messages.length === 0 && (
           <div className="rounded-sm border border-border bg-card/60 p-4 text-sm text-muted-foreground" data-testid="mentor-empty-state">
-            <p className="font-mono text-xs text-cyan-300">DR. NOVA PROTOKOLÜ</p>
+            <p className="font-mono text-xs text-amber-300">DR. NOVA PROTOKOLÜ</p>
             <ul className="mt-2 list-disc space-y-1 pl-4">
               <li>Sana hazır cevap vermem — sorularla düşündürürüm.</li>
               <li>Kanıtını ister, gerekçeni sorgularım.</li>
@@ -110,7 +110,7 @@ export default function DrNovaChat() {
             className={`max-w-[85%] rounded-md border p-3 text-sm leading-relaxed ${
               m.role === "student"
                 ? "ml-auto border-primary/30 bg-primary/10"
-                : "border-cyan-500/25 bg-[#0B1420]"
+                : "border-amber-500/25 bg-[#0B1420]"
             }`}
             data-testid={`mentor-message-${m.role}`}
           >
@@ -128,7 +128,7 @@ export default function DrNovaChat() {
         <div ref={bottomRef} />
       </div>
 
-      <div className="border-t border-cyan-500/20 p-3">
+      <div className="border-t border-amber-500/20 p-3">
         <div className="mb-2 flex flex-wrap gap-1.5" data-testid="mentor-suggestions">
           {SUGGESTIONS.map((s) => (
             <button

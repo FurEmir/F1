@@ -7,6 +7,7 @@ import {
   LayoutGrid,
   LogOut,
   Menu,
+  ScanLine,
   ShieldCheck,
   Terminal,
   Tv,
@@ -33,7 +34,10 @@ export default function TopNav({ user }: { user: UserProfile }) {
   const isTeacher = user.role === "teacher" || user.role === "admin";
 
   const items = isTeacher
-    ? [{ name: "Öğretmen Paneli", path: "/pano", icon: ShieldCheck, testid: "nav-teacher" }]
+    ? [
+        { name: "Öğretmen Paneli", path: "/pano", icon: ShieldCheck, testid: "nav-teacher" },
+        { name: "Kuantum Arenası", path: "/arena", icon: ScanLine, testid: "nav-arena" },
+      ]
     : STUDENT_NAV;
 
   async function handleLogout() {
@@ -43,12 +47,12 @@ export default function TopNav({ user }: { user: UserProfile }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-[#070A11]/80 backdrop-blur-xl">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" aria-hidden />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" aria-hidden />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <NavLink to={isTeacher ? "/pano" : "/"} className="flex items-center gap-2" data-testid="nav-brand">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-emerald-500/50 bg-emerald-500/10 font-mono text-sm text-primary glow-terminal">
+          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-orange-500/50 bg-orange-500/10 font-mono text-sm text-primary glow-terminal">
             KD
-            <span className="absolute inset-0 rounded-md border border-emerald-400/30 animate-pulse-ring" aria-hidden />
+            <span className="absolute inset-0 rounded-md border border-orange-400/30 animate-pulse-ring" aria-hidden />
           </span>
           <span className="hidden font-heading text-sm tracking-wide text-foreground sm:block">
             KUANTUM DEDEKTİFLERİ<span className="text-primary">_</span>
@@ -65,7 +69,7 @@ export default function TopNav({ user }: { user: UserProfile }) {
               className={({ isActive }) =>
                 `flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[13px] transition-all duration-200 ${
                   isActive
-                    ? "border border-emerald-500/40 bg-emerald-500/10 text-primary text-glow"
+                    ? "border border-orange-500/40 bg-orange-500/10 text-primary text-glow"
                     : "border border-transparent text-muted-foreground hover:border-white/10 hover:bg-white/5 hover:text-foreground"
                 }`
               }

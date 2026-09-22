@@ -68,7 +68,7 @@ export default function TechTreeView({ missions }: { missions: MissionStatus[] }
               </span>
               <div className="min-w-0">
                 <p className="flex items-center gap-2 font-heading text-lg text-foreground">
-                  <Atom size={15} className="text-cyan-400" aria-hidden />
+                  <Atom size={15} className="text-amber-400" aria-hidden />
                   {SCIENTIST_LABELS[scientist]}
                   <span
                     className={cn(
@@ -84,7 +84,7 @@ export default function TechTreeView({ missions }: { missions: MissionStatus[] }
                 </p>
                 <p className="truncate text-xs text-muted-foreground">{shift}</p>
                 {byMission.get(mission)?.year && (
-                  <p className="mt-0.5 font-mono text-[10px] text-cyan-300">{byMission.get(mission)?.year}</p>
+                  <p className="mt-0.5 font-mono text-[10px] text-amber-300">{byMission.get(mission)?.year}</p>
                 )}
               </div>
             </Link>

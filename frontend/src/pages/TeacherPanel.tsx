@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   Bar,
@@ -16,7 +17,7 @@ import {
   YAxis,
 } from "recharts";
 import { toast } from "sonner";
-import { AlertTriangle, BarChart3, CheckSquare, LayoutDashboard, Settings, Users } from "lucide-react";
+import { AlertTriangle, BarChart3, CheckSquare, LayoutDashboard, ScanLine, Settings, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -38,7 +39,7 @@ import type {
 } from "@/types";
 import { cn } from "@/lib/utils";
 
-const CHART_COLORS = ["#10B981", "#F59E0B", "#06B6D4", "#38BDF8", "#EF4444"];
+const CHART_COLORS = ["#FB8B24", "#FF6B35", "#FFC233", "#FFE066", "#EF4444"];
 
 export default function TeacherPanel({ user }: { user: UserProfile }) {
   const overview = useQuery({ queryKey: ["teacher-overview"], queryFn: () => apiGet<TeacherOverview>("/teacher/overview") });
@@ -85,6 +86,27 @@ export default function TeacherPanel({ user }: { user: UserProfile }) {
 
         {/* ---------------- overview ---------------- */}
         <TabsContent value="dashboard" className="mt-5">
+          {/* Live arena launcher — the smartboard entry point */}
+          <section className="hud-frame hud-ticks jigsaw-edge glass glass-amber mb-4 p-5" data-testid="teacher-arena-launcher">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="min-w-0">
+                <p className="font-mono text-[11px] tracking-[0.3em] text-amber-300 text-glow-amber">
+                  CANLI OYUN MODU // AKILLI TAHTA
+                </p>
+                <h2 className="mt-1 font-heading text-2xl text-primary text-glow">KUANTUM ARENASI</h2>
+                <p className="mt-1 max-w-xl text-sm text-muted-foreground">
+                  Arenayı başlat: akıllı tahtada büyük bir QR kod ve oda PİNİ görünür. Öğrenciler
+                  telefon/tabletleriyle QR kodu taratıp saniyeler içinde lobiye düşer.
+                </p>
+              </div>
+              <Link to="/arena" className="shrink-0">
+                <Button size="lg" className="jigsaw-btn font-heading tracking-wider" data-testid="teacher-arena-launch-button">
+                  <ScanLine size={17} aria-hidden /> ARENAYI BAŞLAT
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="teacher-stats">
             <Stat label="TOPLAM ÖĞRENCİ" value={o?.total_students ?? "—"} testid="teacher-stat-total" />
             <Stat label="AKTİF ÖĞRENCİ (7 GÜN)" value={o?.active_students ?? "—"} testid="teacher-stat-active" />
@@ -95,7 +117,7 @@ export default function TeacherPanel({ user }: { user: UserProfile }) {
           </div>
 
           <section className="mt-4 hud-frame glass glass-cyan p-4" data-testid="teacher-outcome-card">
-            <p className="font-mono text-xs tracking-widest text-cyan-300">ÖĞRENME ÇIKTISI — {o?.kim_code ?? "KİM.9.1.3"}</p>
+            <p className="font-mono text-xs tracking-widest text-amber-300">ÖĞRENME ÇIKTISI — {o?.kim_code ?? "KİM.9.1.3"}</p>
             <p className="mt-1 text-sm text-foreground/90">{o?.kim_text}</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-4">
               {(o?.outcome_distribution ?? []).map((d, i) => (
@@ -197,7 +219,7 @@ export default function TeacherPanel({ user }: { user: UserProfile }) {
                   <PolarGrid stroke="#1E293B" />
                   <PolarAngleAxis dataKey="label" stroke="#94A3B8" fontSize={10} />
                   <PolarRadiusAxis stroke="#1E293B" fontSize={10} domain={[0, 100]} />
-                  <Radar dataKey="percent" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.3} />
+                  <Radar dataKey="percent" stroke="#FF6B35" fill="#FF6B35" fillOpacity={0.3} />
                   <Tooltip
                     contentStyle={{ background: "#0F172A", border: "1px solid #1E293B", borderRadius: 8, fontSize: 12 }}
                     formatter={(value: number) => [`%${value}`, "Sınıf oranı"]}
@@ -310,7 +332,7 @@ function StudentDetail({ studentId, onClose }: { studentId: string; onClose: () 
     <section className="mt-4 hud-frame glass glass-cyan p-4" data-testid="teacher-student-detail">
       <div className="flex items-start justify-between">
         <div>
-          <p className="font-mono text-xs tracking-widest text-cyan-300">ÖĞRENCİ CEVAP ANALİZİ</p>
+          <p className="font-mono text-xs tracking-widest text-amber-300">ÖĞRENCİ CEVAP ANALİZİ</p>
           <p className="mt-1 font-mono text-lg text-primary">{d?.code ?? "…"} · {d?.nickname ?? ""}</p>
           <p className="text-[11px] text-muted-foreground">
             XP {d?.xp ?? 0} · Tamamlanan görev {d?.missions_completed.length ?? 0} · Öğrenme çıktısı:{" "}
@@ -399,8 +421,8 @@ function SubmissionReviewCard({ submission, studentId }: { submission: Submissio
         {submission.text}
       </p>
 
-      <div className="mt-3 rounded-sm border border-cyan-500/25 bg-[#0B1420] p-3">
-        <p className="font-mono text-[10px] tracking-widest text-cyan-300">AI ÖN DEĞERLENDİRMESİ (öneri)</p>
+      <div className="mt-3 rounded-sm border border-amber-500/25 bg-[#0B1420] p-3">
+        <p className="font-mono text-[10px] tracking-widest text-amber-300">AI ÖN DEĞERLENDİRMESİ (öneri)</p>
         <div className="mt-2 grid gap-2 sm:grid-cols-3">
           <p className="text-xs text-muted-foreground">Bilimin Doğası: <span className="font-mono text-foreground">{ai.nature}/3</span></p>
           <p className="text-xs text-muted-foreground">Kavramsal Doğruluk: <span className="font-mono text-foreground">{ai.conceptual}/3</span></p>
@@ -582,8 +604,8 @@ function LeaderboardSettings() {
           </p>
         </div>
       </div>
-      <div className="mt-4 rounded-sm border border-cyan-500/25 bg-[#0B1420] p-3">
-        <p className="font-mono text-[10px] tracking-widest text-cyan-300">VERİ YAKLAŞIMI</p>
+      <div className="mt-4 rounded-sm border border-amber-500/25 bg-[#0B1420] p-3">
+        <p className="font-mono text-[10px] tracking-widest text-amber-300">VERİ YAKLAŞIMI</p>
         <ul className="mt-2 space-y-1 text-[11px] text-muted-foreground">
           <li>• Panelde yalnızca eğitimsel olarak gerekli veriler gösterilir.</li>
           <li>• Cihaz bilgisi, konum, davranışsal izleme ve reklam profili tutulmaz.</li>

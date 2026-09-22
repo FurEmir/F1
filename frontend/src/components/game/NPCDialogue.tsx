@@ -28,7 +28,7 @@ export default function NPCDialogue({ npc, onComplete }: { npc: NpcScript; onCom
   if (finished) {
     return (
       <div className="hud-frame glass glass-cyan p-4" data-testid="npc-dialogue-closing">
-        <p className="font-mono text-xs text-cyan-300">
+        <p className="font-mono text-xs text-amber-300">
           {npc.emoji} {npc.name} — kapanış notu
         </p>
         <p className="mt-2 text-sm leading-relaxed text-foreground/90">{npc.closing}</p>
@@ -38,7 +38,7 @@ export default function NPCDialogue({ npc, onComplete }: { npc: NpcScript; onCom
 
   return (
     <div className="hud-frame glass glass-cyan p-4" data-testid="npc-dialogue">
-      <p className="font-mono text-xs text-cyan-300">
+      <p className="font-mono text-xs text-amber-300">
         {npc.emoji} {npc.name} · {npc.role}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-foreground" data-testid="npc-dialogue-question">

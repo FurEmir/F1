@@ -130,7 +130,7 @@ export default function Privacy() {
   return (
     <div className="flex min-h-svh flex-col bg-background">
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-        <Link to="/giris" className="inline-flex items-center gap-1 text-sm text-sky-400 hover:underline" data-testid="privacy-back-link">
+        <Link to="/giris" className="inline-flex items-center gap-1 text-sm text-amber-300 hover:underline" data-testid="privacy-back-link">
           <ArrowLeft size={14} aria-hidden /> Geri dön
         </Link>
         <h1 className="mt-4 font-heading text-3xl text-primary text-glow" data-testid="privacy-title">

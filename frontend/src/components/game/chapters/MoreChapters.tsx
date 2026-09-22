@@ -264,7 +264,7 @@ export function RubricResultCard({ submission }: { submission: Submission }) {
   return (
     <div className="space-y-3 hud-frame glass glass-cyan p-4" data-testid="rubric-result">
       <div className="flex items-center justify-between">
-        <p className="font-mono text-xs tracking-widest text-cyan-300">AI ÖN DEĞERLENDİRMESİ</p>
+        <p className="font-mono text-xs tracking-widest text-amber-300">AI ÖN DEĞERLENDİRMESİ</p>
         <Badge variant="outline" className="border-amber-500/50 text-amber-400">
           Öğretmen nihai değerlendirmeyi yapar
         </Badge>
@@ -403,8 +403,8 @@ export function JigsawBoard({ content, tasksDone }: { content: MissionContent; t
                 const peer = JIGSAW_PEER_NOTES[e.id];
                 const isMine = uzmanDone && true; // own notes + peer briefs side by side
                 return (
-                  <div key={e.id} className={cn("rounded-sm border p-3 text-xs", isMine ? "border-cyan-500/30 bg-[#0B1420]" : "border-border bg-card/60")}>
-                    <p className="font-mono text-[10px] text-cyan-300">{e.emoji} {e.label}</p>
+                  <div key={e.id} className={cn("rounded-sm border p-3 text-xs", isMine ? "border-amber-500/30 bg-[#0B1420]" : "border-border bg-card/60")}>
+                    <p className="font-mono text-[10px] text-amber-300">{e.emoji} {e.label}</p>
                     <ul className="mt-1 space-y-0.5 text-muted-foreground">
                       {JIGSAW_FIELDS.map((f) => (
                         <li key={f.id}>

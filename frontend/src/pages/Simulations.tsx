@@ -7,8 +7,8 @@ import { SIMULATIONS } from "@/lib/simulations";
 import { cn } from "@/lib/utils";
 
 const ACCENT = {
-  emerald: { glass: "glass-emerald", text: "text-primary", dot: "bg-emerald-400" },
-  cyan: { glass: "glass-cyan", text: "text-cyan-300", dot: "bg-cyan-400" },
+  emerald: { glass: "glass-emerald", text: "text-primary", dot: "bg-orange-400" },
+  cyan: { glass: "glass-cyan", text: "text-amber-300", dot: "bg-amber-400" },
   amber: { glass: "glass-amber", text: "text-amber-400", dot: "bg-amber-400" },
 } as const;
 
@@ -68,7 +68,7 @@ export default function Simulations() {
           </div>
 
           {/* the embedded interactive simulation */}
-          <div className="relative m-5 overflow-hidden rounded-xl border border-teal-500/30 bg-black/60 glow-holo">
+          <div className="relative m-5 overflow-hidden rounded-xl border border-orange-500/40 bg-black/60 glow-holo">
             <iframe
               key={active.id}
               src={active.src}
@@ -84,7 +84,7 @@ export default function Simulations() {
           </div>
 
           {/* Socratic inquiry prompt */}
-          <div className="mx-5 mb-5 rounded-lg border border-emerald-500/25 bg-emerald-500/5 p-4" data-testid="simulation-inquiry">
+          <div className="mx-5 mb-5 rounded-lg border border-orange-500/25 bg-orange-500/5 p-4" data-testid="simulation-inquiry">
             <p className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-primary">
               <Radio size={12} aria-hidden /> DEDEKTİF SORUSU
             </p>
@@ -102,7 +102,7 @@ export default function Simulations() {
               href="https://phet.colorado.edu"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 inline-flex items-center gap-1 text-[11px] text-sky-400 hover:underline"
+              className="mt-1 inline-flex items-center gap-1 text-[11px] text-amber-300 hover:underline"
               data-testid="simulation-source-link"
             >
               phet.colorado.edu <ExternalLink size={10} aria-hidden />

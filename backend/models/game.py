@@ -176,3 +176,63 @@ class Ok(BaseModel):
     ok: bool = True
     detail: str = ""
     extra: dict[str, Any] = {}
+
+
+class ArenaPlayer(BaseModel):
+    code: str
+    nickname: str | None = None
+    joined_at: datetime | None = None
+    synthetic: bool = False
+
+
+class ArenaRoom(BaseModel):
+    id: str
+    pin: str
+    status: str = "open"
+    players: list[ArenaPlayer] = []
+    created_at: datetime
+
+
+class ArenaAnswerInput(BaseModel):
+    choice: str = Field(min_length=1, max_length=8)
+    justification: str = Field(default="", max_length=1200)
+
+
+class ArenaAnswer(BaseModel):
+    code: str
+    nickname: str | None = None
+    choice: str
+    justification: str = ""
+    correct: bool = False
+    points: int = 0
+
+
+class ArenaScore(BaseModel):
+    rank: int = 0
+    code: str
+    nickname: str | None = None
+    score: int = 0
+    correct: int = 0
+    answers: int = 0
+
+
+class ArenaState(BaseModel):
+    pin: str
+    status: str
+    round_index: int = 0
+    total_rounds: int = 0
+    current_round: dict[str, Any] | None = None
+    players: list[ArenaPlayer] = []
+    answers_count: int = 0
+    round_answers: list[ArenaAnswer] = []
+    my_answer: ArenaAnswer | None = None
+    my_notes: list[str] = []
+    scoreboard: list[ArenaScore] = []
+    round_started_at: datetime | None = None
+
+
+class ArenaJoinResult(BaseModel):
+    joined: bool
+    already_joined: bool
+    pin: str
+    player_count: int

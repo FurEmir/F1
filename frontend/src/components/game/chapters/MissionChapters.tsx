@@ -51,7 +51,7 @@ export default function DarkBox({ content, tasksDone }: { content: MissionConten
               {probes.map((id) => {
                 const p = PROBES.find((x) => x.id === id)!;
                 return (
-                  <p key={id} className="rounded-sm border border-cyan-500/25 bg-[#060A10] p-2 font-mono text-xs text-cyan-200" data-testid={`darkbox-observation-${id}`}>
+                  <p key={id} className="rounded-sm border border-amber-500/25 bg-[#060A10] p-2 font-mono text-xs text-amber-200" data-testid={`darkbox-observation-${id}`}>
                     ▸ {p.obs}
                   </p>
                 );

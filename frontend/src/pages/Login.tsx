@@ -87,13 +87,13 @@ export default function Login() {
         <div className="mt-10 grid gap-5 lg:grid-cols-[1fr_420px]">
           {/* MISSION BRIEFING panel */}
           <section
-            className="hud-frame hud-ticks glass glass-cyan animate-fade-up p-6"
+            className="hud-frame hud-ticks jigsaw-edge glass glass-cyan animate-fade-up p-6"
             data-testid="privacy-summary-card"
           >
             <div className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-cyan-300" aria-hidden />
-              <p className="font-mono text-xs tracking-[0.25em] text-cyan-300">GÖREV BRİFİNGİ</p>
-              <span className="ml-auto rounded-sm border border-cyan-500/30 px-2 py-0.5 font-mono text-[10px] text-cyan-200/80">
+              <ShieldCheck size={16} className="text-amber-300" aria-hidden />
+              <p className="font-mono text-xs tracking-[0.25em] text-amber-300">GÖREV BRİFİNGİ</p>
+              <span className="ml-auto rounded-sm border border-amber-500/30 px-2 py-0.5 font-mono text-[10px] text-amber-200/80">
                 DOSYA: KD-9.1.3
               </span>
             </div>
@@ -104,8 +104,8 @@ export default function Login() {
 
             <ul className="mt-5 space-y-3">
               {BRIEFING.map(({ icon: Icon, title, text }) => (
-                <li key={title} className="hover-lift flex items-start gap-3 rounded-lg border border-white/5 bg-black/25 p-3">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-emerald-500/30 bg-emerald-500/10">
+                <li key={title} className="hover-lift jigsaw-edge flex items-start gap-3 rounded-lg border border-white/5 bg-black/25 p-3">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-orange-500/30 bg-orange-500/10">
                     <Icon size={14} className="text-primary" aria-hidden />
                   </span>
                   <div>
@@ -116,15 +116,7 @@ export default function Login() {
               ))}
             </ul>
 
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/5 pt-4">
-              <Link
-                to="/gizlilik"
-                className="group inline-flex items-center gap-1.5 text-sm text-sky-400 transition-colors hover:text-sky-300"
-                data-testid="login-privacy-link"
-              >
-                Verilerim nasıl kullanılıyor?
-                <ChevronRight size={14} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </Link>
+            <div className="mt-5 flex flex-wrap items-center justify-end gap-3 border-t border-white/5 pt-4">
               <p className="inline-flex items-center gap-1.5 font-mono text-[10px] text-muted-foreground">
                 <BadgeCheck size={11} className="text-primary" aria-hidden />
                 KVKK ve ilgili mevzuat gözetilerek tasarlanmıştır
@@ -134,11 +126,11 @@ export default function Login() {
 
           {/* SYSTEM LOGIN TERMINAL */}
           <section
-            className="hud-frame hud-ticks glass glass-emerald animate-fade-up scanlines p-6"
+            className="hud-frame hud-ticks jigsaw-edge glass glass-emerald animate-fade-up scanlines p-6"
             data-testid="login-card"
           >
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-md border border-emerald-500/40 bg-emerald-500/10">
+              <span className="flex h-8 w-8 items-center justify-center rounded-md border border-orange-500/40 bg-orange-500/10">
                 <KeyRound size={14} className="text-primary" aria-hidden />
               </span>
               <div>
@@ -147,7 +139,7 @@ export default function Login() {
                   durum: <span className="text-primary">ÇEVRİMİÇİ</span> · şifreleme: aktif
                 </p>
               </div>
-              <Atom size={18} className="ml-auto animate-orbit-slow text-cyan-400/70" aria-hidden />
+              <Atom size={18} className="ml-auto animate-orbit-slow text-amber-400/70" aria-hidden />
             </div>
 
             <Tabs defaultValue="student" className="mt-5">
@@ -194,7 +186,7 @@ export default function Login() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="group relative w-full overflow-hidden font-heading tracking-wider"
+                    className="jigsaw-btn group relative w-full font-heading tracking-wider"
                     disabled={login.isPending || !code.trim()}
                     data-testid="login-student-submit-button"
                   >
@@ -211,7 +203,7 @@ export default function Login() {
                           key={c}
                           type="button"
                           onClick={() => setCode(c)}
-                          className="rounded-md border border-emerald-500/25 bg-emerald-500/5 px-2 py-1 font-mono text-[11px] text-primary transition-colors hover:border-emerald-400/60"
+                          className="rounded-md border border-orange-500/25 bg-orange-500/5 px-2 py-1 font-mono text-[11px] text-primary transition-colors hover:border-orange-400/60"
                           data-testid={`login-demo-code-${c}`}
                         >
                           {c}
@@ -265,7 +257,7 @@ export default function Login() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="group w-full font-heading tracking-wider"
+                    className="jigsaw-btn group w-full font-heading tracking-wider"
                     disabled={login.isPending || !teacherCode.trim() || !pin}
                     data-testid="login-teacher-submit-button"
                   >

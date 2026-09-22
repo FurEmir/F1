@@ -182,3 +182,77 @@ export interface OkResponse {
   detail: string;
   extra: Record<string, unknown>;
 }
+
+export interface ArenaPlayer {
+  code: string;
+  nickname: string | null;
+  joined_at: string | null;
+  synthetic: boolean;
+}
+
+export interface ArenaRoom {
+  id: string;
+  pin: string;
+  status: string;
+  players: ArenaPlayer[];
+  created_at: string;
+}
+
+export interface ArenaJoinResult {
+  joined: boolean;
+  already_joined: boolean;
+  pin: string;
+  player_count: number;
+}
+
+export interface ArenaOption {
+  id: string;
+  text: string;
+}
+
+export interface ArenaRound {
+  index: number;
+  code: string;
+  title: string;
+  scientist: string;
+  prompt: string;
+  question: string;
+  options: ArenaOption[];
+  seconds: number;
+  total_rounds: number;
+  correct?: string;
+  explanation?: string;
+}
+
+export interface ArenaAnswer {
+  code: string;
+  nickname: string | null;
+  choice: string;
+  justification: string;
+  correct: boolean;
+  points: number;
+}
+
+export interface ArenaScore {
+  rank: number;
+  code: string;
+  nickname: string | null;
+  score: number;
+  correct: number;
+  answers: number;
+}
+
+export interface ArenaState {
+  pin: string;
+  status: string; // open | in_round | reveal | finished
+  round_index: number;
+  total_rounds: number;
+  current_round: ArenaRound | null;
+  players: ArenaPlayer[];
+  answers_count: number;
+  round_answers: ArenaAnswer[];
+  my_answer: ArenaAnswer | null;
+  my_notes: string[];
+  scoreboard: ArenaScore[];
+  round_started_at: string | null;
+}

@@ -82,6 +82,7 @@ export default defineConfig(async () => {
         "react-day-picker",
         "react-dom/client",
         "react-is",
+        "react-qr-code",
         "react-router-dom",
         "recharts-upstream",
         "sonner",

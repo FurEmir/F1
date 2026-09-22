@@ -145,7 +145,7 @@ export default function EvidenceBoardGrid() {
                             "flex min-h-[72px] items-start justify-between gap-1 rounded-sm border p-1.5 transition-colors",
                             cardId
                               ? "border-primary/40 bg-primary/10"
-                              : "border-dashed border-border bg-[#1A2234]/60 hover:border-sky-400/60",
+                              : "border-dashed border-border bg-[#1A2234]/60 hover:border-amber-400/60",
                           )}
                           data-testid={`evidence-cell-${s}-${f}`}
                           aria-label={`${SCIENTIST_LABELS[s]} — ${EB_FIELD_LABELS[f]} hücresi`}
