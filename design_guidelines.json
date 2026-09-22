@@ -1,0 +1,268 @@
+{
+  "project_name": "Kuantum Dedektifleri: Bilimsel Kırılma",
+  "archetype": "ARCHETYPE 4 / RETRO-FUTURISM SCIENTIFIC INVESTIGATION (Top Secret Terminal & Quantum Hologram)",
+  "language": "tr-TR",
+  "target_curriculum": "Türkiye Yüzyılı Maarif Modeli 9. Sınıf Kimya (KİM.9.1.3)",
+  "theme": "dark",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#0B0F17",
+        "on_bg": "#E2E8F0",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "terminal_green": "#10B981",
+          "amber_alert": "#F59E0B",
+          "cyan_hologram": "#06B6D4",
+          "error": "#EF4444",
+          "success": "#10B981"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#111827",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border_glow": "#1E293B",
+          "badge_bg": "#1E293B",
+          "badge_text": "#38BDF8"
+        }
+      },
+      {
+        "name": "dossier_card",
+        "kind": "solid",
+        "bg": "#151E2E",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#A0ABBA",
+        "roles": {
+          "secret_stamp": "#F59E0B",
+          "classified_tag": "#EF4444"
+        }
+      },
+      {
+        "name": "terminal_screen",
+        "kind": "solid",
+        "bg": "#060A10",
+        "on_bg": "#34D399",
+        "on_bg_muted": "#059669",
+        "roles": {
+          "cursor": "#10B981",
+          "prompt": "#F59E0B"
+        }
+      },
+      {
+        "name": "evidence_board_cell",
+        "kind": "solid",
+        "bg": "#1A2234",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "dropzone_hover": "#0EA5E9",
+          "card_placed": "#059669"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#0B0F17",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(11,15,23,0.85) 0%, rgba(11,15,23,0.96) 100%)",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "accent_badge": "#F59E0B",
+          "success": "#34D399"
+        }
+      },
+      {
+        "name": "modal_overlay",
+        "kind": "solid",
+        "bg": "#0F172A",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      }
+    ],
+    "accent": "#10B981",
+    "on_accent": "#042F2E",
+    "secondary_accent": "#F59E0B",
+    "on_secondary_accent": "#451A03",
+    "cyan_accent": "#06B6D4",
+    "on_cyan_accent": "#083344"
+  },
+  "typography": {
+    "font_heading": "'Space Grotesk Variable', sans-serif",
+    "font_body": "'Geist Variable', sans-serif",
+    "font_mono": "'JetBrains Mono Variable', monospace",
+    "scale_px": {
+      "display": 56,
+      "h1": 40,
+      "h2": 32,
+      "h3": 24,
+      "h4": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "font_imports": [
+      "@import \"@fontsource-variable/space-grotesk\";",
+      "@import \"@fontsource-variable/geist\";",
+      "@import \"@fontsource-variable/jetbrains-mono\";"
+    ]
+  },
+  "entry_surfaces": {
+    "/": "split hero — classified agent welcome + quick access left, live holographic atom simulation & mission radar right",
+    "/login": "dual terminal login — student anonymous detective ID (KD-2048) on left tab, teacher PIN authentication on right panel",
+    "/privacy": "tactical privacy dossier — MEB/KVKK data minimization pledge and student pseudonymity guarantee",
+    "/missions": "chapter investigation board — top-secret dossier tabs with 6 temporal chapters from Dark Box to Chadwick",
+    "/evidence-board": "interactive 5x6 scientific evidence matrix — draggable theoretical assumptions and empirical contradictions",
+    "/rutherford-sim": "alpha particle gold-foil interactive scattering chamber with particle emitter and detection screen",
+    "/tech-tree": "chronological atomic theory tech tree — connected holographic nodes with unlock states and paradigm shifts",
+    "/ai-mentor": "Dr. Nova Socratic quantum AI terminal — classified prompt interface providing inquiry-based guidance",
+    "/hologram-archive": "classified quantum video & 3D hologram archive — scanline video player with license and MEB outcome tags",
+    "/teacher": "teacher surveillance command center — Recharts misconception radar, AI rubric override console and student progress"
+  },
+  "visual_enhancers": {
+    "scanlines": "subtle terminal scanlines via repeating-linear-gradient(rgba(16, 185, 129, 0.03) 0px, transparent 2px, transparent 4px)",
+    "tactical_borders": "1px solid #1E293B with neon corner crosshairs [data-corner='tl']",
+    "secret_stamp": "transform: rotate(-6deg); border: 2px dashed #F59E0B; color: #F59E0B; text-transform: uppercase;",
+    "holographic_glow": "box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25), inset 0 0 15px -3px rgba(6, 182, 212, 0.15)",
+    "terminal_glow": "box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.2)"
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1690683789766-93253a3422c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxxdWFudHVtJTIwY2hlbWlzdHJ5JTIwYXRvbSUyMHBhcnRpY2xlc3xlbnwwfHx8fDE3OTAwNzg4Nzl8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract quantum atomic orbits and glowing energy core for hero headers and hologram backgrounds",
+      "category": "hero_and_hologram"
+    },
+    "quantum_particles": {
+      "url": "https://images.pexels.com/photos/38032287/pexels-photo-38032287.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Magnetic field and particle visualization for Dr. Nova AI mentor and chapter breakthroughs",
+      "category": "ai_mentor_and_chapters"
+    },
+    "gold_foil_texture": {
+      "url": "https://images.unsplash.com/photo-1618352357270-ef40d25bcef8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxnb2xkJTIwZm9pbCUyMHBoeXNpY3MlMjBleHBlcmltZW50fGVufDB8fHx8MTc5MDA3ODg3OXww&ixlib=rb-4.1.0&q=85",
+      "description": "Microscopic textured gold foil surface for Rutherford scattering experiment simulation",
+      "category": "rutherford_simulation"
+    },
+    "archive_retro_screen": {
+      "url": "https://images.pexels.com/photos/38117127/pexels-photo-38117127.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Terminal holographic display frame for Hologram Archive video player",
+      "category": "hologram_archive"
+    }
+  },
+  "navigation_structure": {
+    "student_nav": [
+      {"name": "Ana Sayfa", "path": "/", "icon": "Terminal", "test_id": "nav-home"},
+      {"name": "Görevler", "path": "/missions", "icon": "FolderLock", "test_id": "nav-missions"},
+      {"name": "Kanıt Panosu", "path": "/evidence-board", "icon": "LayoutGrid", "test_id": "nav-evidence-board"},
+      {"name": "Rutherford Deneyi", "path": "/rutherford-sim", "icon": "Atom", "test_id": "nav-rutherford-sim"},
+      {"name": "Teknoloji Ağacı", "path": "/tech-tree", "icon": "GitFork", "test_id": "nav-tech-tree"},
+      {"name": "Hologram Arşivi", "path": "/hologram-archive", "icon": "Tv", "test_id": "nav-hologram-archive"},
+      {"name": "Dr. Nova (AI Mentor)", "path": "/ai-mentor", "icon": "Bot", "test_id": "nav-ai-mentor"},
+      {"name": "Öğretmen Paneli", "path": "/teacher", "icon": "ShieldCheck", "test_id": "nav-teacher"}
+    ],
+    "teacher_nav": [
+      {"name": "Genel Bakış", "tab": "dashboard", "icon": "LayoutDashboard", "test_id": "teacher-nav-overview"},
+      {"name": "Sınıflarım & Öğrenciler", "tab": "students", "icon": "Users", "test_id": "teacher-nav-students"},
+      {"name": "Kavram Yanılgısı Radarı", "tab": "misconceptions", "icon": "AlertTriangle", "test_id": "teacher-nav-radar"},
+      {"name": "Rubrik & AI Değerlendirme", "tab": "rubric", "icon": "CheckSquare", "test_id": "teacher-nav-rubric"},
+      {"name": "Öğrenme Analitiği", "tab": "analytics", "icon": "BarChart3", "test_id": "teacher-nav-analytics"}
+    ]
+  },
+  "key_components": [
+    {
+      "name": "SafetyOnboardingModal",
+      "path": "frontend/src/components/game/SafetyOnboardingModal.tsx",
+      "purpose": "İlk girişte 'Güvenli Oyun Alanı' bilgilendirmesi, KVKK / Veri minimizasyonu onayı ('ANLADIM, OYUNA GEÇ')"
+    },
+    {
+      "name": "RutherfordSimulation",
+      "path": "frontend/src/components/game/RutherfordSimulation.tsx",
+      "purpose": "Etkileşimli Alfa Işını Altın Levha Simülasyonu: partikül fırlatma, saçılma açıları, kanıt çıkarma ve panoya gönderme"
+    },
+    {
+      "name": "ScientificEvidenceBoard",
+      "path": "frontend/src/components/game/ScientificEvidenceBoard.tsx",
+      "purpose": "5 Bilim İnsanı × 6 Sütun (Model Varsayımı, Kanıt, Açıklayabildiği, Zorlandığı, Sonraki Değişim) sürükle-bırak matrisi"
+    },
+    {
+      "name": "DarkBoxInvestigation",
+      "path": "frontend/src/components/game/DarkBoxInvestigation.tsx",
+      "purpose": "Bölüm 01: Öğrencinin kapalı kutuyu doğrudan açmadan ses/ağırlık/mıknatıs verileriyle ilk atomik modelini kurması"
+    },
+    {
+      "name": "AtomicTechTree",
+      "path": "frontend/src/components/game/AtomicTechTree.tsx",
+      "purpose": "Dalton -> Thomson -> Rutherford -> Bohr -> Chadwick bilimsel değişim teknoloji ağacı (Kilitli/Keşfedilebilir/Tamamlandı)"
+    },
+    {
+      "name": "DrNovaAssistant",
+      "path": "frontend/src/components/game/DrNovaAssistant.tsx",
+      "purpose": "Gerçek LLM destekli Sokratik AI Kimya Mentorü. Cevabı asla doğrudan vermez, ipucu ve sorgulama yaptırır"
+    },
+    {
+      "name": "NPCDialogueModal",
+      "path": "frontend/src/components/game/NPCDialogueModal.tsx",
+      "purpose": "Tarihi bilim insanları (Dalton, Thomson, Rutherford, Bohr) ile Sokratik ipucu diyalogları"
+    },
+    {
+      "name": "JigsawExpertGroup",
+      "path": "frontend/src/components/game/JigsawExpertGroup.tsx",
+      "purpose": "İşbirlikli Jigsaw öğrenme uzmanlık masası (4 uzman rolü + ortak sentez raporu)"
+    },
+    {
+      "name": "TeacherRubricOverride",
+      "path": "frontend/src/components/teacher/TeacherRubricOverride.tsx",
+      "purpose": "AI ön puanlaması (Bilimin Doğası 0-3, Kavramsal 0-3, Sentez 0-4 = 10 Puan) üzerinde öğretmenin onay/değiştirme yetkisi"
+    },
+    {
+      "name": "MisconceptionRadar",
+      "path": "frontend/src/components/teacher/MisconceptionRadar.tsx",
+      "purpose": "'Olası kavram yanılgısı göstergesi' diliyle öğrencilerin atom modelleri yanılgılarını Recharts radarı ile gösterme"
+    },
+    {
+      "name": "HologramPlayer",
+      "path": "frontend/src/components/game/HologramPlayer.tsx",
+      "purpose": "Modern holografik/terminal video oynatıcı, simüle deney kayıtları, süre ve MEB kazanım etiketleri"
+    },
+    {
+      "name": "AppFooter",
+      "path": "frontend/src/components/layout/AppFooter.tsx",
+      "purpose": "Her sayfada zorunlu MEB prototip bildirimi, Gizlilik ve Veri Kullanımı, KVKK Bilgilendirmesi, Erişilebilirlik linkleri"
+    }
+  ],
+  "gamification_system": {
+    "levels": [
+      {"level": 1, "title": "Stajyer Dedektif (Karanlık Kutu)", "min_xp": 0},
+      {"level": 2, "title": "Madde Araştırmacısı (Dalton)", "min_xp": 250},
+      {"level": 3, "title": "Yük Kaşifi (Thomson)", "min_xp": 550},
+      {"level": 4, "title": "Çekirdek Operatörü (Rutherford)", "min_xp": 950},
+      {"level": 5, "title": "Kuantum Yörünge Dedektifi (Bohr)", "min_xp": 1400},
+      {"level": 6, "title": "Baş Kuantum Müfettişi (Chadwick & Modern)", "min_xp": 2000}
+    ],
+    "badges": [
+      {"id": "b1", "name": "Karanlık Kutu Kaşifi", "icon": "📦", "desc": "Doğrudan gözlemlenemeyen yapıyı dolaylı kanıtla modelledi."},
+      {"id": "b2", "name": "Altın Saçılma Ustası", "icon": "🎯", "desc": "Rutherford deneyinde 1/8000 geri yansımayı tespit edip çekirdeği kanıtladı."},
+      {"id": "b3", "name": "Kavram Dedektifi", "icon": "🔍", "desc": "Üzümlü kek modelinin neden terk edildiğini kanıtlarla açıkladı."},
+      {"id": "b4", "name": "Sokratik Zihin", "icon": "💡", "desc": "Dr. Nova'nın 5 Sokratik sorusunu yardım almadan çözdü."},
+      {"id": "b5", "name": "Bilimsel Kırılma Lideri", "icon": "⚡", "desc": "Bilimsel bilginin mutlak değil, kanıtlarla değişebilir olduğunu sentezledi."}
+    ]
+  },
+  "privacy_and_compliance": {
+    "pseudonym_rule": "Öğrenci adı/soyadı/T.C. Kimlik No ASLA tutulmaz. Yalnızca Dedektif Kodu (örn. KD-2048) ve seçtiği Takma Ad (örn. QuantumFox) kullanılır.",
+    "disclaimer_text": "Bu platform, Türkiye Yüzyılı Maarif Modeli kapsamında eğitim ve araştırma amacıyla geliştirilmiş bir prototiptir. KVKK ve ilgili mevzuat gözetilerek veri minimizasyonu ilkelerine uygun olarak tasarlanmıştır.",
+    "compliance_wording_rule": "Asla 'KVKK onaylıdır / KVKK uyumludur' ifadesi kullanılmaz. 'KVKK ve ilgili mevzuat gözetilerek tasarlanmıştır' dili esastır."
+  },
+  "instructions_to_main_agent": [
+    "1. Tema: Karanlık terminal / Top-Secret dedektiflik atmosferi (#0B0F17 arka plan, #10B981 zümrüt yeşili, #F59E0B kehribar ve #06B6D4 kuantum camgöbeği vurgular).",
+    "2. Dil: Arayüz, butonlar, diyaloglar, rubrikler ve mesajların TAMAMI profesyonel ve eğitimsel TÜRKÇE olacaktır.",
+    "3. Öğrenci Akışı: Güvenli Oyun Alanı Onboarding Modalı -> Dedektif Kodu Girişi -> Bölüm 01 Karanlık Kutu -> Rutherford İnteraktif Altın Levha Simülasyonu -> Bilimsel Kanıt Panosu -> Teknoloji Ağacı -> Hologram Arşivi -> Final 'Bilimsel Kırılma' Görevi.",
+    "4. AI Mentor (Dr. Nova): Gerçek LLM entegrasyonu (FastAPI backend üzerinden). Doğrudan cevap vermeyip öğrenciyi Sokratik sorularla düşündürmelidir. Mock fallback her zaman çalışır olmalıdır.",
+    "5. Öğretmen Paneli: Sınıf başarı grafikleri, Recharts ile Kavram Yanılgısı Radarı, AI ön değerlendirmesi ve öğretmenin 10 puanlık rubrik üzerinde tek tıkla kabul/değiştirme/özel geri bildirim mekanizması.",
+    "6. Güvenlik & Gizlilik: Her sayfada AppFooter'da 'Eğitim amacıyla geliştirilmiş prototiptir' ve Gizlilik/KVKK bağlantıları yer almalı, veri minimizasyonu sağlanmalıdır.",
+    "7. Data-testid: Test subagent'ının hatasız doğrulaması için her buton, input, modal ve tab'a role-based 'data-testid' öznitelikleri eksiksiz eklenmelidir."
+  ]
+}
